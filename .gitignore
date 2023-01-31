@@ -29,6 +29,10 @@ hs_err_pid*
 .settings
 build-eclipse/
 
+#Visual studio
+.vscode
+.factorypath
+
 # maven stuff (to be removed when trunk becomes 4.x)
 *-execution-hints.log
 target/
@@ -40,3 +44,7 @@ pom.xml.releaseBackup
 
 src/main/java/com/acastillo/dev/test/dto/
 src/main/java/com/acastillo/dev/test/spec/
+
+VERSION
+similarProducts.yaml.sha256
+existingApis.yaml.sha256
