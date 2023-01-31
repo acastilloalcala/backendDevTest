@@ -22,3 +22,21 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 /.metadata/
+
+# eclipse files
+.project
+.classpath
+.settings
+build-eclipse/
+
+# maven stuff (to be removed when trunk becomes 4.x)
+*-execution-hints.log
+target/
+dependency-reduced-pom.xml
+
+#maven release
+release.properties
+pom.xml.releaseBackup
+
+src/main/java/com/acastillo/dev/test/dto/
+src/main/java/com/acastillo/dev/test/spec/
