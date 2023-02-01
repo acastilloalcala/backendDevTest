@@ -16,7 +16,7 @@ import io.swagger.annotations.ApiParam;
 public interface IProductProxy {
 
 	@RequestMapping(value = "/product/{productId}/similarids", method = RequestMethod.GET)
-	ResponseEntity<List<String>> getProductSimilarIds(@ApiParam(value = "", required = true) @PathVariable("productId") String productId);
+	ResponseEntity<List<String>> getProductSimilarids(@ApiParam(value = "", required = true) @PathVariable("productId") String productId);
 	
 	@RequestMapping(value = "/product/{productId}", method = RequestMethod.GET)
 	ResponseEntity<ProductDetailDto> getProductProductId(@ApiParam(value = "", required = true) @PathVariable("productId") String productId);

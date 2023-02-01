@@ -28,12 +28,18 @@ public class ProductServiceImpl implements IProductService{
 	public List<ProductDetailDto> getProductSimilar(String productId) {
 		List<String> similarIds = new ArrayList<>();
 		try {
-			similarIds = productProxy.getProductSimilarIds(productId).getBody();
+			similarIds = productProxy.getProductSimilarids(productId).getBody();
 		} catch (Exception e) {
-			throw new ResourceNotFoundException("Product id: " + productId + " not found.");
+			throw new ResourceNotFoundException("Product similar id: " + productId + " not found.");
 		}
 		List<com.acastillo.dev.test.dto.existingApis.ProductDetailDto> products = new ArrayList();
-		similarIds.forEach( id -> products.add(productProxy.getProductProductId(id).getBody()));
+		similarIds.forEach( id->{
+				try {
+					products.add(productProxy.getProductProductId(id).getBody());
+				} catch(Exception e) {
+					throw new ResourceNotFoundException("Product id: " + id + " not found.");
+				}
+			});
 		List<ProductDetailDto> result = products.stream().map(productMapper::toDto).collect(Collectors.toList());
 		
 		return result;
